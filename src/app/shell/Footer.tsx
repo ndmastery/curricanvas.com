@@ -4,6 +4,7 @@ import {
   useComputed$,
   useVisibleTask$,
   useSignal,
+  type JSXOutput,
 } from "@builder.io/qwik";
 import { useStyles$ } from "@builder.io/qwik";
 import { Link } from "@builder.io/qwik-city";
@@ -61,7 +62,7 @@ const ArrowSvg = () => (
   </svg>
 );
 
-const ICON_MAP: Record<string, (() => any) | undefined> = {
+const ICON_MAP: Record<string, (() => JSXOutput) | undefined> = {
   github: GitHubIcon, linkedin: LinkedInIcon, x: XIcon,
   instagram: InstagramIcon, threads: ThreadsIcon,
   tiktok: TikTokIcon, facebook: FacebookIcon,
@@ -134,7 +135,7 @@ export const Footer = component$(() => {
                   class="ft__social-link"
                   aria-label={link.label}
                   title={link.label}
-                  style={{ "--ft-si": i } as any}
+                  style={{ "--ft-si": i }}
                 >
                   <Icon />
                 </a>

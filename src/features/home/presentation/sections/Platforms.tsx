@@ -4,6 +4,7 @@ import {
   useComputed$,
   useSignal,
   useVisibleTask$,
+  type JSXOutput,
 } from "@builder.io/qwik";
 import { useStyles$ } from "@builder.io/qwik";
 import { LocaleContext } from "@/app/providers/locale.provider";
@@ -55,7 +56,7 @@ const LinuxSvg = () => (
 
 interface PlatformCard {
   id: string;
-  icon: any;
+  icon: JSXOutput;
   nameKey: string;
   descKey: string;
 }
@@ -134,7 +135,7 @@ export const Platforms = component$(() => {
         
         <div class="pf__grid">
           {UPCOMING_PLATFORMS.map((p, i) => (
-            <div key={p.id} class="pf__card" style={{ "--card-i": i } as any}>
+            <div key={p.id} class="pf__card" style={{ "--card-i": i }}>
               <span class="pf__card-icon">{p.icon}</span>
               <span class="pf__card-name">{t(translations.value, p.nameKey)}</span>
               <span class="pf__card-desc">{t(translations.value, p.descKey)}</span>

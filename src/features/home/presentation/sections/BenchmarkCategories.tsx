@@ -1,4 +1,4 @@
-import type { QRL, Signal } from "@builder.io/qwik";
+import type { QRL, Signal, JSXOutput } from "@builder.io/qwik";
 import type { CompetitorInfo } from "@/shared/types/benchmark.types";
 import type { FeatureValue } from "@/features/home/data/benchmark.data";
 import { GROUPED, computeCategoryScore, renderBenchmarkIcon } from "@/features/home/data/benchmark.data";
@@ -14,7 +14,7 @@ interface BenchmarkCategoriesProps {
   translations: Record<string, string>;
 }
 
-function renderValue(value: FeatureValue, isSelf: boolean): any {
+function renderValue(value: FeatureValue, isSelf: boolean): JSXOutput {
   if (typeof value === "boolean") {
     if (value) {
       return (
@@ -46,7 +46,7 @@ export const BenchmarkCategories = (props: BenchmarkCategoriesProps) => (
       const rivalPct = (rivalStats.score / rivalStats.total) * 100;
 
       return (
-        <div key={group.category} id={`bmk-cat-${group.category}`} class={`bmk__category ${isExpanded ? "bmk__category--expanded" : ""}`} style={{ "--group-i": groupIndex } as any}>
+        <div key={group.category} id={`bmk-cat-${group.category}`} class={`bmk__category ${isExpanded ? "bmk__category--expanded" : ""}`} style={{ "--group-i": groupIndex }}>
           <button class="bmk__cat-head" onClick$={() => props.toggleCategory$(group.category)} aria-expanded={isExpanded}>
             <div class="bmk__cat-info">
               <span class="bmk__cat-icon">{renderBenchmarkIcon(group.category, 18)}</span>

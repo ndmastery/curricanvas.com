@@ -143,7 +143,7 @@ export const Capabilities = component$(() => {
               <div
                 key={tab.id}
                 class={`cap__group ${isOpen ? "cap__group--open" : ""}`}
-                style={{ "--group-i": tabIdx } as any}
+                style={{ "--group-i": tabIdx }}
               >
                 
                 <button
@@ -193,7 +193,7 @@ export const Capabilities = component$(() => {
                       <div
                         key={item.titleKey}
                         class={`cap__card ${item.exclusive ? "cap__card--exclusive" : ""}`}
-                        style={{ "--card-i": idx } as any}
+                        style={{ "--card-i": idx }}
                       >
                         
                         <div class="cap__card-icon" aria-hidden="true">

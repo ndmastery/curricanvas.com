@@ -39,7 +39,7 @@ export const HeaderMobileMenu = component$((props: HeaderMobileMenuProps) => (
       </div>
       <nav class="bs-overlay__nav" aria-label="Mobile Navigation">
         {NAV_ITEMS.map((item, index) => (
-          <div key={item.id} class="bs-overlay__navitem" style={{ "--stagger": index } as any}>
+          <div key={item.id} class="bs-overlay__navitem" style={{ "--stagger": index }}>
             <a href={item.href} class="bs-overlay__navlink" onClick$={() => {
               props.isOpen.value = false;
             }}>

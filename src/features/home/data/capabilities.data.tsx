@@ -121,12 +121,16 @@ const sortExclusiveFirst = (items: CapabilityItem[]): CapabilityItem[] => {
   return [...exclusive, ...standard];
 };
 
-export const SORTED_CAPABILITY_ITEMS: Record<TabId, CapabilityItem[]> = {} as any;
-export const CAPABILITY_TAB_DURATION_MS: Record<TabId, number> = {} as any;
+const _sortedItems: Partial<Record<TabId, CapabilityItem[]>> = {};
+const _tabDurations: Partial<Record<TabId, number>> = {};
 
 for (const tab of CAPABILITY_TABS) {
-  SORTED_CAPABILITY_ITEMS[tab.id] = sortExclusiveFirst(CAPABILITIES[tab.id]);
-  
+  _sortedItems[tab.id] = sortExclusiveFirst(CAPABILITIES[tab.id]);
+
   const count = CAPABILITIES[tab.id].length;
-  CAPABILITY_TAB_DURATION_MS[tab.id] = Math.min(Math.max(5000 + count * 1500, 7000), 18000);
+  _tabDurations[tab.id] = Math.min(Math.max(5000 + count * 1500, 7000), 18000);
 }
+
+export const SORTED_CAPABILITY_ITEMS = _sortedItems as Record<TabId, CapabilityItem[]>;
+export const CAPABILITY_TAB_DURATION_MS = _tabDurations as Record<TabId, number>;
+

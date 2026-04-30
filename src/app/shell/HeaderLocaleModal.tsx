@@ -25,7 +25,7 @@ export const HeaderLocaleModal = component$((props: HeaderLocaleModalProps) => (
       </div>
       <div class="bs-lang-modal__grid" role="listbox" aria-label="Available languages">
         {LOCALE_CONFIGS.map((cfg, index) => (
-          <button key={cfg.code} class={`bs-lang-modal__option ${props.locale.value === cfg.code ? "bs-lang-modal__option--active" : ""}`} style={{ "--lang-i": index } as any} onClick$={() => props.selectLocale$(cfg.code as AppLocale)} role="option" aria-selected={props.locale.value === cfg.code}>
+          <button key={cfg.code} class={`bs-lang-modal__option ${props.locale.value === cfg.code ? "bs-lang-modal__option--active" : ""}`} style={{ "--lang-i": index }} onClick$={() => props.selectLocale$(cfg.code as AppLocale)} role="option" aria-selected={props.locale.value === cfg.code}>
             <span class="bs-lang-modal__flag" aria-hidden="true">{cfg.flag}</span>
             <span class="bs-lang-modal__name">{cfg.nativeName}</span>
             {props.locale.value === cfg.code && (

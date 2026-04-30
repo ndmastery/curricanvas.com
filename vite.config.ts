@@ -5,11 +5,14 @@ import { resolve } from "path";
 import pkg from "./package.json";
 
 type PkgDep = Record<string, string>;
-const { dependencies = {}, devDependencies = {} } = pkg as any as {
-  dependencies: PkgDep;
-  devDependencies: PkgDep;
+
+interface PackageJson {
+  dependencies?: PkgDep;
+  devDependencies?: PkgDep;
   [key: string]: unknown;
-};
+}
+
+const { dependencies = {}, devDependencies = {} } = pkg as PackageJson;
 errorOnDuplicatesPkgDeps(devDependencies, dependencies);
 
 export default defineConfig(({ command, mode }): UserConfig => {

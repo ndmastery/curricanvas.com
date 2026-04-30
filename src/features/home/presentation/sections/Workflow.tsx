@@ -203,7 +203,7 @@ export const Workflow = component$(() => {
           
           <div class={`wfl__steps ${activePhase.id === "choose" ? "wfl__steps--branch" : ""}`}>
             {activePhase.steps.map((step, idx) => (
-              <div key={step.id} class={`wfl__step ${step.isBranch ? "wfl__step--branch" : ""}`} style={{ "--step-i": idx } as any}>
+              <div key={step.id} class={`wfl__step ${step.isBranch ? "wfl__step--branch" : ""}`} style={{ "--step-i": idx }}>
                 
                 <div class="wfl__step-head">
                   <span class="wfl__step-icon">
