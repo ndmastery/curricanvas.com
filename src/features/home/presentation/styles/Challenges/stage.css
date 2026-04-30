@@ -190,7 +190,8 @@
   overflow: hidden;
 }
 
-.chl__watermark {
+.chl__stage-left::before {
+  content: attr(data-watermark);
   position: absolute;
   top: -16px; right: -12px;
   font-family: var(--font-heading);

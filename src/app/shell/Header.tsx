@@ -22,8 +22,8 @@ import { getAnnouncementMessage } from "@/shared/config/changelog.config";
 import styles from "@/app/shell/Header.css?inline";
 
 import { IconAmoled, IconChevronRight, IconMenu, IconMoon, IconSun, IconSystem } from "@/app/shell/header-icons";
-import { HeaderLocaleModal } from "@/app/shell/HeaderLocaleModal";
-import { HeaderMobileMenu } from "@/app/shell/HeaderMobileMenu";
+import { LocaleModal } from "@/app/shell/LocaleModal";
+import { MobileMenu } from "@/app/shell/MobileMenu";
 
 function pad(n: number): string {
   return String(n).padStart(2, "0");
@@ -269,8 +269,8 @@ export const Header = component$(() => {
           </div>
         </header>
       </div>
-      <HeaderLocaleModal locale={locale} open={showLocaleModal} selectLocale$={selectLocale} />
-      <HeaderMobileMenu
+      <LocaleModal locale={locale} open={showLocaleModal} selectLocale$={selectLocale} />
+      <MobileMenu
         currentLocale={currentLocale.value}
         cycleTheme$={cycleTheme}
         isOpen={isMobileOpen}

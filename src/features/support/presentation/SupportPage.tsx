@@ -6,7 +6,7 @@ import styles from "@/features/support/presentation/styles/support.css?inline";
 const LAST_MODIFIED = "April 20, 2026";
 
 import { FAQ_DATA, totalAll } from "@/features/support/data/support-faq.data";
-import { SupportFaqContent } from "@/features/support/presentation/SupportFaqContent";
+import { FaqContent } from "@/features/support/presentation/FaqContent";
 import { getSearchWords, getSmartSuggestions } from "@/shared/utils/search.utils";
 
 const ALL_WORDS = getSearchWords(FAQ_DATA.flatMap((category) => category.items.map((item) => ({ title: item.question, content: item.answer }))));
@@ -245,7 +245,7 @@ export const SupportPage = component$(() => {
             </div>
           )}
         </div>
-        <SupportFaqContent
+        <FaqContent
           activeCat={activeCat}
           autoExpandIds={autoExpandIds.value}
           clearSearch$={clearSearch}

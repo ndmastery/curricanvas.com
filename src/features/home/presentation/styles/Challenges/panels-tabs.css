@@ -192,7 +192,7 @@
   .chl__stage { grid-template-columns: 1fr 1fr; min-height: 340px; }
   .chl__stage-left { padding: 2.5rem 2rem; }
   .chl__stage-right { padding: 2rem; padding-inline-start: 0; }
-  .chl__watermark { font-size: 9rem; top: -10px; right: -8px; }
+  .chl__stage-left::before { font-size: 9rem; top: -10px; right: -8px; }
   .chl__panel { padding: 1.5rem; border-radius: 14px; }
   .chl__tab-label { font-size: 0.6875rem; }
   .chl__tab-num { display: none; }
@@ -209,7 +209,7 @@
   .chl__stage-left {
     padding: 2rem 1.75rem 1.5rem;
   }
-  .chl__watermark {
+  .chl__stage-left::before {
     font-size: 6.5rem; top: -8px; right: -6px;
   }
   .chl__stage-icon { width: 44px; height: 44px; border-radius: 13px; margin-bottom: 1.25rem; }
@@ -230,7 +230,7 @@
 
 @media (prefers-reduced-motion: reduce) {
   .chl__tabs, .chl__stage,
-  .chl__watermark, .chl__stage-icon, .chl__stage-title,
+  .chl__stage-left::before, .chl__stage-icon, .chl__stage-title,
   .chl__stage-context, .chl__panel, .chl__panel-connector {
     animation: none !important;
     transition: none !important;

@@ -1,5 +1,5 @@
-import { TermsOfServicePage } from "@/features/legal/presentation/TermsOfServicePage";
+import { TermsPage } from "@/features/legal/presentation/TermsPage";
 import { termsOfServiceHead as head } from "@/features/legal/config/legal.seo";
 
-export default TermsOfServicePage;
+export default TermsPage;
 export { head };

@@ -1,6 +1,6 @@
 import { component$, type PropFunction } from "@builder.io/qwik";
 
-interface LegalEmptyStateProps {
+interface EmptyStateProps {
   classPrefix: "ppg" | "tos";
   query: string;
   smartSuggestions: string[];
@@ -8,7 +8,7 @@ interface LegalEmptyStateProps {
   onSelectSuggestion$: PropFunction<(word: string) => void>;
 }
 
-export const LegalEmptyState = component$((props: LegalEmptyStateProps) => {
+export const EmptyState = component$((props: EmptyStateProps) => {
   const prefix = props.classPrefix;
 
   return (

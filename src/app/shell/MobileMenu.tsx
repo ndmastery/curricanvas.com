@@ -8,7 +8,7 @@ import { LogoIcon } from "@/shared/ui/icons/LogoIcon";
 import { t } from "@/i18n/index";
 import { IconAmoled, IconMoon, IconSun, IconSystem, IconX } from "@/app/shell/header-icons";
 
-interface HeaderMobileMenuProps {
+interface MobileMenuProps {
   currentLocale: LocaleConfig;
   cycleTheme$: QRL<() => void>;
   isOpen: Signal<boolean>;
@@ -18,7 +18,7 @@ interface HeaderMobileMenuProps {
   translations: Record<string, string>;
 }
 
-export const HeaderMobileMenu = component$((props: HeaderMobileMenuProps) => (
+export const MobileMenu = component$((props: MobileMenuProps) => (
   <div class={`bs-overlay ${props.isOpen.value ? "bs-overlay--open" : ""}`} role="dialog" aria-modal="true" aria-label="Navigation menu" aria-hidden={!props.isOpen.value}>
     <div class="bs-overlay__backdrop" onClick$={() => {
       props.isOpen.value = false;

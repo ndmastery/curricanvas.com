@@ -1,7 +1,7 @@
 import { component$, type PropFunction } from "@builder.io/qwik";
 import type { ChangelogVersion } from "@/shared/config/changelog.config";
 
-interface ChangelogReleaseListProps {
+interface ReleaseListProps {
   canCollapse: boolean;
   clearSearch$: PropFunction<() => void>;
   expandedVersion: string;
@@ -27,7 +27,7 @@ const highlight = (text: string, query: string) => {
   ));
 };
 
-export const ChangelogReleaseList = component$((props: ChangelogReleaseListProps) => {
+export const ReleaseList = component$((props: ReleaseListProps) => {
   if (props.searchResults.length === 0) {
     return (
       <div class="clg__nil">

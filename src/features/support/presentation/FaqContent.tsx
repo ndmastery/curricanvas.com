@@ -2,7 +2,7 @@ import { component$, type PropFunction, type Signal } from "@builder.io/qwik";
 import { FAQ_DATA, type FAQCategory } from "@/features/support/data/support-faq.data";
 import { formatNumberIndex } from "@/shared/utils/search.utils";
 
-interface SupportFaqContentProps {
+interface FaqContentProps {
   activeCat: Signal<string>;
   autoExpandIds: string[];
   clearSearch$: PropFunction<() => void>;
@@ -28,7 +28,7 @@ const highlight = (text: string, query: string) => {
   ));
 };
 
-export const SupportFaqContent = component$((props: SupportFaqContentProps) => {
+export const FaqContent = component$((props: FaqContentProps) => {
   if (props.data.length === 0) {
     return (
       <div class="sup__nil">

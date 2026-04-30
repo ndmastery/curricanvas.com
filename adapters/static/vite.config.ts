@@ -6,7 +6,7 @@ import { resolve } from "path";
 
 export default defineConfig(() => ({
   build: {
-    outDir: "build",
+    outDir: "build/server",
     ssr: true,
     rollupOptions: {
       input: ["@qwik-city-plan"],
@@ -14,7 +14,7 @@ export default defineConfig(() => ({
   },
   plugins: [
     qwikCity(),
-    qwikVite(),
+    qwikVite({ client: { outDir: "build/client" } }),
     staticAdapter({
       origin: "https://curricanvas.com",
     }),

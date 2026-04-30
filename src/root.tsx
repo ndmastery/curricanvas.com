@@ -16,7 +16,10 @@ export default component$(() => {
         <link
           rel="preload"
           as="image"
-          href="/curricanvas-preview.png"
+          type="image/webp"
+          href="/curricanvas-preview-1200w.webp"
+          imageSrcset="/curricanvas-preview-800w.webp 800w, /curricanvas-preview-1200w.webp 1200w"
+          imageSizes="(max-width: 640px) 100vw, (max-width: 960px) 80vw, 600px"
           fetchPriority="high"
         />
         <link

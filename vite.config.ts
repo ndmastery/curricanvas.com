@@ -17,7 +17,7 @@ errorOnDuplicatesPkgDeps(devDependencies, dependencies);
 
 export default defineConfig(({ command, mode }): UserConfig => {
   return {
-    build: { outDir: 'build' },
+    build: { outDir: 'build/client' },
     plugins: [qwikCity(), qwikVite()],
     resolve: {
       tsconfigPaths: true,

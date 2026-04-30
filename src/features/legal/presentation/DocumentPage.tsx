@@ -1,11 +1,11 @@
 import { $, component$, useComputed$, useOnDocument, useSignal, useVisibleTask$ } from "@builder.io/qwik";
 import { Link } from "@builder.io/qwik-city";
 import type { LegalSection } from "@/features/legal/types/legal.types";
-import { LegalEmptyState } from "@/features/legal/presentation/LegalEmptyState";
-import { highlightLegalText, renderLegalContent } from "@/features/legal/presentation/LegalRichText";
+import { EmptyState } from "@/features/legal/presentation/EmptyState";
+import { highlightLegalText, renderLegalContent } from "@/features/legal/presentation/RichText";
 import { formatNumberIndex, getSearchWords, getSmartSuggestions, matchesSearchTerms } from "@/shared/utils/search.utils";
 
-interface LegalDocumentPageProps {
+interface DocumentPageProps {
   classPrefix: "ppg" | "tos";
   effectiveDate: string;
   intro: string;
@@ -19,7 +19,7 @@ interface LegalDocumentPageProps {
   supportDescription: string;
 }
 
-export const LegalDocumentPage = component$((props: LegalDocumentPageProps) => {
+export const DocumentPage = component$((props: DocumentPageProps) => {
   const expandedId = useSignal(props.sections[0]?.id ?? "");
   const searchQuery = useSignal("");
   const searchFocused = useSignal(false);
@@ -275,7 +275,7 @@ export const LegalDocumentPage = component$((props: LegalDocumentPageProps) => {
             </div>
           </div>
         ) : (
-          <LegalEmptyState
+          <EmptyState
             classPrefix={prefix}
             query={searchQuery.value}
             smartSuggestions={smartSuggestions.value}

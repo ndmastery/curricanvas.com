@@ -15,7 +15,7 @@
     "types": ["vite/client"],
     "incremental": true,
     "isolatedModules": true,
-    "outDir": "tmp",
+    "outDir": "typescript-build-cache",
     "noEmit": true,
     "paths": {
       "~/*": ["./src/*"],

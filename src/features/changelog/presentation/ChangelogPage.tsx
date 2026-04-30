@@ -4,7 +4,7 @@ import { APP_NAME } from "@/shared/constants/app.constants";
 import { getVisibleChangelog } from "@/shared/config/changelog.config";
 import type { ChangelogVersion } from "@/shared/config/changelog.config";
 import styles from "@/features/changelog/presentation/styles/changelog.css?inline";
-import { ChangelogReleaseList } from "@/features/changelog/presentation/ChangelogReleaseList";
+import { ReleaseList } from "@/features/changelog/presentation/ReleaseList";
 
 const PAGE_SIZE = 10;
 
@@ -265,7 +265,7 @@ export const ChangelogPage = component$(() => {
         </div>
 
         
-        <ChangelogReleaseList
+        <ReleaseList
           canCollapse={canCollapse}
           clearSearch$={clearSearch}
           expandedVersion={expandedVersion.value}

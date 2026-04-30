@@ -1,2 +1,2 @@
-@import "@/routes/[...catchall]/error.parts/error.1.css";
-@import "@/routes/[...catchall]/error.parts/error.2.css";
+@import "@/routes/[...catchall]/error.styles/shell-visual.css";
+@import "@/routes/[...catchall]/error.styles/message-actions-modal.css";

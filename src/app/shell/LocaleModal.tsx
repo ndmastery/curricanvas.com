@@ -3,13 +3,13 @@ import { AppLocale } from "@/shared/enums/locale.enum";
 import { LOCALE_CONFIGS } from "@/i18n/index";
 import { IconX } from "@/app/shell/header-icons";
 
-interface HeaderLocaleModalProps {
+interface LocaleModalProps {
   locale: Signal<AppLocale>;
   open: Signal<boolean>;
   selectLocale$: QRL<(code: AppLocale) => void>;
 }
 
-export const HeaderLocaleModal = component$((props: HeaderLocaleModalProps) => (
+export const LocaleModal = component$((props: LocaleModalProps) => (
   <div class={`bs-lang-modal ${props.open.value ? "bs-lang-modal--open" : ""}`} role="dialog" aria-modal="true" aria-label="Select language" aria-hidden={!props.open.value}>
     <div class="bs-lang-modal__backdrop" onClick$={() => {
       props.open.value = false;

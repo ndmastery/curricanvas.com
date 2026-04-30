@@ -162,16 +162,23 @@ export const Hero = component$(() => {
 
         <div class="hro__showcase">
           <div class="hro__showcase-window">
-            <img
-              src="/curricanvas-preview.png"
-              alt="CurriCanvas resume builder interface — showing the editor and ATS-optimized preview"
-              class="hro__showcase-img"
-              width="900"
-              height="600"
-              loading="eager"
-              decoding="async"
-              fetchPriority="high"
-            />
+            <picture>
+              <source
+                type="image/webp"
+                srcset="/curricanvas-preview-800w.webp 800w, /curricanvas-preview-1200w.webp 1200w, /curricanvas-preview.webp 2898w"
+                sizes="(max-width: 640px) 100vw, (max-width: 960px) 80vw, 600px"
+              />
+              <img
+                src="/curricanvas-preview.png"
+                alt="CurriCanvas resume builder interface — showing the editor and ATS-optimized preview"
+                class="hro__showcase-img"
+                width="900"
+                height="600"
+                loading="eager"
+                decoding="async"
+                fetchPriority="high"
+              />
+            </picture>
 
 
             <div class="hro__float hro__float--ats" aria-hidden="true">

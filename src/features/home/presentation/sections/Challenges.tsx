@@ -195,8 +195,7 @@ export const Challenges = component$(() => {
         <div class="chl__stage" key={contentKey.value} role="tabpanel" id="chl-stage-panel" aria-live="polite">
 
           
-          <div class="chl__stage-left">
-            <div class="chl__watermark" aria-hidden="true">{active.num}</div>
+          <div class="chl__stage-left" data-watermark={active.num}>
             <div class="chl__stage-icon">
               <ChallengeIcon type={active.iconType} />
             </div>
