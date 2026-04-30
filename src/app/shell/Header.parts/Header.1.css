@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap');
+/* DM Sans loaded from root.tsx */
 
 :root {
   --bs-font-display: 'DM Sans', var(--font-body);
@@ -209,7 +209,7 @@
   text-decoration: none;
   white-space: nowrap;
   flex-shrink: 0;
-  transition: all 0.3s cubic-bezier(0.22,1,0.36,1);
+  transition: background 0.3s cubic-bezier(0.22,1,0.36,1), transform 0.3s cubic-bezier(0.22,1,0.36,1), border-color 0.3s cubic-bezier(0.22,1,0.36,1);
 }
 .bs-ribbon__action:hover {
   background: var(--bs-accent);
@@ -232,7 +232,7 @@
   -webkit-backdrop-filter: blur(24px) saturate(180%);
   border-bottom: 1px solid var(--bs-frame-border);
   box-shadow: var(--bs-frame-shadow);
-  transition: all 0.5s cubic-bezier(0.22,1,0.36,1);
+  transition: background 0.5s cubic-bezier(0.22,1,0.36,1), box-shadow 0.5s cubic-bezier(0.22,1,0.36,1), border-color 0.5s cubic-bezier(0.22,1,0.36,1);
   position: relative;
 }
 .bs-bar__inner {

@@ -70,9 +70,13 @@
 
 .ft__edge {
   position: absolute; top: 0; left: 0; right: 0; height: 2px; z-index: 2;
+  overflow: hidden;
+}
+.ft__edge::before {
+  content: ""; position: absolute; top: 0; left: -100%; width: 300%; height: 100%;
   background: linear-gradient(90deg, transparent 0%, var(--ft-accent-soft) 20%, var(--ft-accent) 50%, var(--ft-accent-soft) 80%, transparent 100%);
-  background-size: 200% 100%;
   animation: ft-edge-shift 8s ease-in-out infinite;
+  will-change: transform;
 }
 
 .ft__inner {
@@ -126,7 +130,7 @@
   width: 34px; height: 34px; border-radius: 10px;
   background: var(--ft-social-bg);
   color: var(--ft-text-muted); text-decoration: none; cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.22,1,0.36,1);
+  transition: transform 0.3s cubic-bezier(0.22,1,0.36,1), background 0.3s cubic-bezier(0.22,1,0.36,1);
 }
 .ft__social-link:hover {
   color: var(--ft-accent); background: var(--ft-social-hover);
@@ -160,7 +164,7 @@
   font-family: var(--font-body); font-size: 0.75rem; font-weight: 600;
   text-decoration: none; border: none; cursor: pointer;
   box-shadow: 0 4px 14px -4px var(--ft-cta-glow);
-  transition: all 0.35s cubic-bezier(0.22,1,0.36,1);
+  transition: transform 0.35s cubic-bezier(0.22,1,0.36,1), box-shadow 0.35s ease, filter 0.35s ease;
   position: relative; overflow: hidden;
 }
 .ft__cta::after {
@@ -257,8 +261,8 @@
 .ft__company:hover::after { width: 100%; }
 
 @keyframes ft-edge-shift {
-  0%,100% { background-position: 0% 50%; }
-  50%     { background-position: 100% 50%; }
+  0%,100% { transform: translateX(0); }
+  50%     { transform: translateX(33%); }
 }
 
 @media (max-width: 960px) {

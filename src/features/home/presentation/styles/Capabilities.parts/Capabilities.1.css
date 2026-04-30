@@ -165,6 +165,10 @@
   animation-delay: calc(0.12s + (var(--group-i, 0) * 0.05s));
 }
 
+.cap__trigger-heading {
+  margin: 0; padding: 0; font: inherit;
+}
+
 .cap__trigger {
   width: 100%;
   display: flex;
@@ -181,7 +185,7 @@
   font-family: inherit;
   color: inherit;
   margin-bottom: 0.5rem;
-  transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: background 0.35s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1), border-radius 0.35s cubic-bezier(0.22, 1, 0.36, 1);
   -webkit-tap-highlight-color: transparent;
   position: relative;
   z-index: 2;

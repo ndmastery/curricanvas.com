@@ -10,7 +10,7 @@
   --chl-stage-border: rgba(0,0,0,0.06);
   --chl-stage-shadow: 0 12px 48px -12px rgba(0,0,0,0.08), 0 2px 12px -4px rgba(0,0,0,0.04);
 
-  --chl-watermark: rgba(188, 115, 68, 0.05);
+  --chl-watermark: rgba(188, 115, 68, 0.08);
   --chl-icon-bg: rgba(188, 115, 68, 0.08);
   --chl-icon-color: #BC7344;
   --chl-title-color: #1F1A16;
@@ -18,13 +18,13 @@
 
   --chl-problem-bg: #FEF6F0;
   --chl-problem-border: rgba(188, 115, 68, 0.18);
-  --chl-problem-accent: #C07840;
-  --chl-problem-text: #7A5A3F;
+  --chl-problem-accent: #9A5A28;
+  --chl-problem-text: #5C3D22;
 
   --chl-solve-bg: #F2F8F3;
   --chl-solve-border: rgba(91, 130, 96, 0.18);
-  --chl-solve-accent: #5B8260;
-  --chl-solve-text: #3A5E40;
+  --chl-solve-accent: #3D6344;
+  --chl-solve-text: #2A4E30;
 
   --chl-connector: rgba(0,0,0,0.12);
 
@@ -57,7 +57,7 @@
   --chl-stage-border: rgba(255,255,255,0.06);
   --chl-stage-shadow: 0 12px 48px -12px rgba(0,0,0,0.5), 0 2px 12px -4px rgba(0,0,0,0.3);
 
-  --chl-watermark: rgba(212, 140, 88, 0.04);
+  --chl-watermark: rgba(212, 140, 88, 0.06);
   --chl-icon-bg: rgba(212, 140, 88, 0.08);
   --chl-icon-color: #D4885A;
   --chl-title-color: #F0EBE6;
@@ -104,7 +104,7 @@
   --chl-stage-border: rgba(255,255,255,0.05);
   --chl-stage-shadow: 0 12px 48px -12px rgba(0,0,0,0.7), 0 2px 12px -4px rgba(0,0,0,0.5);
 
-  --chl-watermark: rgba(192, 120, 72, 0.03);
+  --chl-watermark: rgba(192, 120, 72, 0.05);
   --chl-icon-bg: rgba(192, 120, 72, 0.06);
   --chl-icon-color: #C9825A;
   --chl-title-color: #E8E3DE;

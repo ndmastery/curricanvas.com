@@ -170,6 +170,7 @@ export const Hero = component$(() => {
               height="600"
               loading="eager"
               decoding="async"
+              fetchPriority="high"
             />
 
 

@@ -126,9 +126,10 @@
     rgba(196,122,90,0.08) 55%,
     transparent 70%
   );
-  background-size: 250% 100%;
+  background-size: 100% 100%;
   animation: hro-shimmer 3.5s ease-in-out infinite;
   border-radius: inherit; pointer-events: none;
+  will-change: transform;
 }
 .hro__eyebrow svg { color: var(--hro-copper); position: relative; z-index: 2; }
 .hro--visible .hro__eyebrow { animation: hro-slide-right 0.6s cubic-bezier(0.22,1,0.36,1) forwards; }
@@ -189,7 +190,7 @@
   display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.85rem 1.75rem;
   border-radius: var(--radius-full); font-size: 0.9375rem; font-weight: 600; font-family: var(--font-body);
   color: var(--text-primary); background: transparent; border: 1px solid var(--border-strong);
-  cursor: pointer; text-decoration: none; transition: all 0.3s cubic-bezier(0.16,1,0.3,1);
+  cursor: pointer; text-decoration: none; transition: background 0.3s cubic-bezier(0.16,1,0.3,1), border-color 0.3s cubic-bezier(0.16,1,0.3,1), transform 0.3s cubic-bezier(0.16,1,0.3,1);
 }
 .hro__btn-ghost:hover {
   background: var(--hro-border); border-color: var(--hro-copper); color: var(--hro-copper);
@@ -208,7 +209,7 @@
   padding: 0.5rem 0.875rem; border-radius: 12px;
   background: var(--hro-stat-bg); border: 1px solid var(--border-subtle);
   backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-  transition: all 0.3s ease; cursor: default;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
 }
 .hro__stat-pill:hover {
   border-color: var(--hro-border-strong); background: var(--hro-border);

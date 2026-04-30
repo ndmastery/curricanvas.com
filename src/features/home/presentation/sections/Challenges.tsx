@@ -192,7 +192,7 @@ export const Challenges = component$(() => {
         </header>
 
         
-        <div class="chl__stage" key={contentKey.value}>
+        <div class="chl__stage" key={contentKey.value} role="tabpanel" id="chl-stage-panel" aria-live="polite">
 
           
           <div class="chl__stage-left">
@@ -238,14 +238,16 @@ export const Challenges = component$(() => {
         </div>
 
         
-        <nav class="chl__tabs" aria-label="Challenge navigation">
+        <div class="chl__tabs" role="tablist" aria-label="Challenge navigation">
           {CHALLENGES.map((c, idx) => (
             <button
               key={c.id}
               type="button"
+              role="tab"
               class={`chl__tab ${activeIdx.value === idx ? "chl__tab--active" : ""}`}
               onClick$={() => goTo(idx)}
               aria-selected={activeIdx.value === idx}
+              aria-controls="chl-stage-panel"
               aria-label={`Challenge ${c.num}`}
               id={`chl-tab-${c.id}`}
             >
@@ -262,7 +264,7 @@ export const Challenges = component$(() => {
               )}
             </button>
           ))}
-        </nav>
+        </div>
 
         
         <div class="chl__mobile-nav">

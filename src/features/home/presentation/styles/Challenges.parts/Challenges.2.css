@@ -149,17 +149,21 @@
 .chl__mobile-btn svg { width: 20px; height: 20px; }
 
 .chl__mobile-dots {
-  display: flex; gap: 0.5rem; align-items: center;
+  display: flex; gap: 0.25rem; align-items: center;
 }
 .chl__mobile-dot {
-  width: 8px; height: 8px; border-radius: 50%;
+  width: 10px; height: 10px; border-radius: 50%;
   background: var(--chl-dot-bg);
-  border: none; cursor: pointer; padding: 0;
+  border: none; cursor: pointer;
+  padding: 10px;
+  box-sizing: content-box;
+  background-clip: content-box;
   transition: background 0.3s ease, transform 0.3s ease;
 }
 .chl__mobile-dot--active {
   background: var(--chl-dot-active);
-  transform: scale(1.4);
+  background-clip: content-box;
+  transform: scale(1.3);
   box-shadow: 0 0 10px rgba(188, 115, 68, 0.3);
 }
 

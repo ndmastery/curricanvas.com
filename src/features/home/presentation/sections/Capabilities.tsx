@@ -134,7 +134,7 @@ export const Capabilities = component$(() => {
         </div>
 
         
-        <div class="cap__accordion" role="tablist">
+        <div class="cap__accordion">
           {CAPABILITY_TABS.map((tab, tabIdx) => {
             const isOpen = openTabId === tab.id;
             const isActive = activeIdx.value === tabIdx;
@@ -146,46 +146,47 @@ export const Capabilities = component$(() => {
                 style={{ "--group-i": tabIdx }}
               >
                 
-                <button
-                  role="tab"
-                  aria-selected={isOpen}
-                  aria-controls={`cap-panel-${tab.id}`}
-                  id={`cap-trigger-${tab.id}`}
-                  class="cap__trigger"
-                  onClick$={() => goTo(tabIdx)}
-                >
-                  <span class="cap__trigger-left">
-                    <span class="cap__trigger-icon">
-                      {renderCapabilityIcon(tab.icon, 18)}
+                <h3 class="cap__trigger-heading">
+                  <button
+                    aria-expanded={isOpen}
+                    aria-controls={`cap-panel-${tab.id}`}
+                    id={`cap-trigger-${tab.id}`}
+                    class="cap__trigger"
+                    onClick$={() => goTo(tabIdx)}
+                  >
+                    <span class="cap__trigger-left">
+                      <span class="cap__trigger-icon">
+                        {renderCapabilityIcon(tab.icon, 18)}
+                      </span>
+                      <span class="cap__trigger-label">
+                        {t(translations.value, tab.labelKey)}
+                      </span>
                     </span>
-                    <span class="cap__trigger-label">
-                      {t(translations.value, tab.labelKey)}
+                    <span class="cap__trigger-right">
+                      <span class="cap__trigger-count">
+                        {items.length}
+                      </span>
+                      <span class={`cap__trigger-chevron ${isOpen ? "cap__trigger-chevron--open" : ""}`}>
+                        {renderCapabilityIcon("chevron", 16)}
+                      </span>
                     </span>
-                  </span>
-                  <span class="cap__trigger-right">
-                    <span class="cap__trigger-count">
-                      {items.length}
-                    </span>
-                    <span class={`cap__trigger-chevron ${isOpen ? "cap__trigger-chevron--open" : ""}`}>
-                      {renderCapabilityIcon("chevron", 16)}
-                    </span>
-                  </span>
 
-                  
-                  {isActive && (
-                    <span
-                      class="cap__trigger-progress"
-                      style={{ width: `${progressPct.value}%` }}
-                      aria-hidden="true"
-                    />
-                  )}
-                </button>
+                    
+                    {isActive && (
+                      <span
+                        class="cap__trigger-progress"
+                        style={{ width: `${progressPct.value}%` }}
+                        aria-hidden="true"
+                      />
+                    )}
+                  </button>
+                </h3>
 
                 
                 <div
                   class={`cap__panel ${isOpen ? "cap__panel--open" : ""}`}
                   id={`cap-panel-${tab.id}`}
-                  role="tabpanel"
+                  role="region"
                   aria-labelledby={`cap-trigger-${tab.id}`}
                 >
                   <div class="cap__strip" id={`cap-strip-${tab.id}`}>
@@ -203,9 +204,9 @@ export const Capabilities = component$(() => {
                         
                         <div class="cap__card-body">
                           <div class="cap__card-head">
-                            <h3 class="cap__card-title">
+                            <h4 class="cap__card-title">
                               {t(translations.value, item.titleKey)}
-                            </h3>
+                            </h4>
                             {item.exclusive && (
                               <span class="cap__exclusive">Exclusive</span>
                             )}
