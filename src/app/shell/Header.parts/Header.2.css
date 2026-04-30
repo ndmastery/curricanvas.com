@@ -1,0 +1,238 @@
+.bs-bar--floating {
+  background: var(--bs-surface);
+  border-bottom-color: transparent;
+  box-shadow: var(--bs-scroll-shadow);
+}
+.bs-bar--floating::after {
+  content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--bs-accent), transparent);
+  opacity: 0.3;
+}
+
+.bs-brand {
+  display: flex; align-items: center; gap: 0.75rem;
+  text-decoration: none; color: inherit; flex-shrink: 0;
+  justify-self: start;
+}
+.bs-brand__logo {
+  color: var(--bs-accent);
+  transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1);
+}
+.bs-brand:hover .bs-brand__logo { transform: scale(1.05) rotate(5deg); }
+.bs-brand__name {
+  font-family: var(--bs-font-display); font-size: 1.25rem; font-weight: 700;
+  color: var(--text-primary); letter-spacing: -0.02em;
+}
+
+.bs-capsule {
+  display: flex; align-items: center; justify-content: center; gap: 4px;
+  position: relative;
+  background: var(--bs-nav-bg);
+  border: 1px solid var(--bs-frame-border);
+  padding: 6px; border-radius: 100px;
+  justify-self: center;
+  box-shadow: inset 0 1px 4px rgba(0,0,0,0.02);
+}
+.bs-nav__link {
+  position: relative; z-index: 1;
+  font-family: var(--bs-font-display); font-size: 0.875rem; font-weight: 500;
+  color: var(--text-secondary); text-decoration: none; white-space: nowrap;
+  padding: 6px 16px; border-radius: 100px;
+  transition: color 0.2s ease;
+}
+.bs-nav__link:hover { color: var(--text-primary); }
+
+.bs-capsule__indicator {
+  position: absolute; bottom: 4px; height: 2px;
+  background: var(--bs-accent);
+  border-radius: 2px; z-index: 0;
+  pointer-events: none; opacity: 0;
+  transform: scaleX(0); transform-origin: center;
+  transition: left 0.3s cubic-bezier(0.34,1.56,0.64,1),
+              width 0.3s cubic-bezier(0.34,1.56,0.64,1),
+              opacity 0.2s ease, transform 0.3s cubic-bezier(0.34,1.56,0.64,1);
+}
+.bs-capsule__indicator--show { opacity: 1; transform: scaleX(0.7); }
+
+.bs-actions {
+  display: flex; align-items: center; justify-content: flex-end; gap: 10px;
+  justify-self: end; flex-shrink: 0;
+  min-width: 0;
+}
+
+.bs-theme-cycle {
+  position: relative;
+  width: 36px; height: 36px; border-radius: 100px;
+  display: flex; align-items: center; justify-content: center;
+  background: transparent; border: 1px solid var(--bs-frame-border);
+  color: var(--text-primary); cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+  overflow: hidden;
+}
+.bs-theme-cycle:hover {
+  background: var(--bs-frame-border);
+  border-color: var(--bs-accent);
+}
+.bs-theme-cycle:active { transform: scale(0.92); }
+.bs-theme-cycle__icon {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; transform: rotate(-90deg) scale(0.5);
+  transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.34,1.56,0.64,1);
+  pointer-events: none;
+}
+.bs-theme-cycle__icon--visible {
+  opacity: 1; transform: rotate(0deg) scale(1);
+}
+.bs-theme-cycle__label { display: none; }
+
+.bs-locale-trigger {
+  height: 32px; padding: 0 10px; border-radius: 100px;
+  display: flex; align-items: center; justify-content: center; gap: 6px;
+  background: transparent; border: 1px solid var(--bs-frame-border);
+  cursor: pointer; transition: all 0.2s ease;
+}
+.bs-locale-trigger:hover { background: var(--bs-frame-border); }
+.bs-locale-trigger__flag { font-size: 1rem; line-height: 1; }
+.bs-locale-trigger__code {
+  font-family: var(--bs-font-display); font-size: 0.75rem; font-weight: 600;
+  color: var(--text-secondary);
+}
+.bs-locale-trigger:hover .bs-locale-trigger__code { color: var(--text-primary); }
+
+.bs-lang-modal {
+  position: fixed; inset: 0; z-index: 300;
+  display: flex; align-items: center; justify-content: center;
+  pointer-events: none;
+}
+.bs-lang-modal__backdrop {
+  position: absolute; inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.bs-lang-modal__panel {
+  position: relative; z-index: 1;
+  width: 92%; max-width: 420px;
+  background: var(--bs-surface-solid);
+  border: 1px solid var(--bs-frame-border);
+  border-radius: 24px;
+  box-shadow: 0 24px 64px -16px rgba(0, 0, 0, 0.25),
+              0 8px 20px -4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  opacity: 0; transform: scale(0.92) translateY(20px);
+  transition: opacity 0.35s cubic-bezier(0.34,1.56,0.64,1),
+              transform 0.35s cubic-bezier(0.34,1.56,0.64,1);
+}
+.bs-lang-modal--open { pointer-events: auto; }
+.bs-lang-modal--open .bs-lang-modal__backdrop { opacity: 1; }
+.bs-lang-modal--open .bs-lang-modal__panel {
+  opacity: 1; transform: scale(1) translateY(0);
+}
+
+.bs-lang-modal__header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 20px 24px 16px;
+  border-bottom: 1px solid var(--bs-frame-border);
+}
+.bs-lang-modal__title {
+  font-family: var(--bs-font-display); font-size: 1.125rem; font-weight: 700;
+  color: var(--text-primary); letter-spacing: -0.02em;
+}
+.bs-lang-modal__close {
+  width: 32px; height: 32px; border-radius: 100px;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--bs-frame-border); border: none;
+  color: var(--text-primary); cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.bs-lang-modal__close:hover { background: var(--bs-nav-hover); transform: rotate(90deg); }
+
+.bs-lang-modal__grid {
+  display: grid; grid-template-columns: 1fr;
+  gap: 4px; padding: 12px 16px 16px;
+}
+.bs-lang-modal__option {
+  display: flex; align-items: center; gap: 14px;
+  padding: 12px 16px; border-radius: 14px;
+  background: transparent; border: none; width: 100%;
+  text-align: left; cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease;
+  opacity: 0; transform: translateY(12px);
+}
+.bs-lang-modal--open .bs-lang-modal__option {
+  animation: bs-lang-appear 0.3s ease forwards;
+  animation-delay: calc(80ms + var(--lang-i) * 40ms);
+}
+@keyframes bs-lang-appear {
+  to { opacity: 1; transform: translateY(0); }
+}
+.bs-lang-modal__option:hover { background: var(--bs-frame-border); }
+.bs-lang-modal__option:active { transform: scale(0.98); }
+.bs-lang-modal__option--active {
+  background: var(--bs-nav-hover);
+}
+.bs-lang-modal__flag { font-size: 1.5rem; line-height: 1; flex-shrink: 0; }
+.bs-lang-modal__name {
+  flex: 1;
+  font-family: var(--bs-font-display); font-size: 0.9375rem; font-weight: 500;
+  color: var(--text-primary);
+}
+.bs-lang-modal__option--active .bs-lang-modal__name {
+  color: var(--bs-accent); font-weight: 600;
+}
+.bs-lang-modal__check {
+  flex-shrink: 0; color: var(--bs-accent);
+  display: flex; align-items: center;
+}
+
+.bs-cta {
+  display: inline-flex; align-items: center; justify-content: center;
+  height: 34px; padding: 0 18px; border-radius: 100px;
+  background: linear-gradient(135deg, var(--bs-accent), var(--bs-accent-warm));
+  color: #fff; font-family: var(--bs-font-display);
+  font-size: 0.875rem; font-weight: 600; text-decoration: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: inset 0 2px 4px rgba(255,255,255,0.2), 0 4px 12px var(--bs-accent-glow);
+  border: none; cursor: pointer;
+}
+.bs-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: inset 0 2px 4px rgba(255,255,255,0.2), 0 8px 20px var(--bs-accent-glow);
+  color: #fff;
+}
+.bs-cta--full { width: 100%; height: 48px; font-size: 1rem; border-radius: 14px; }
+
+.bs-menu-btn {
+  display: none; align-items: center; justify-content: center;
+  width: 36px; height: 36px; border-radius: 100px;
+  background: transparent; border: 1px solid var(--bs-frame-border);
+  color: var(--text-primary); cursor: pointer;
+  transition: all 0.2s ease;
+}
+.bs-menu-btn:hover { background: var(--bs-frame-border); }
+
+.bs-overlay {
+  position: fixed; inset: 0; z-index: 250;
+  display: flex; flex-direction: column;
+  pointer-events: none;
+}
+
+.bs-overlay__backdrop {
+  position: absolute; inset: 0; z-index: -1;
+  background: var(--bs-surface);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.bs-overlay__content {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column;
+  opacity: 0; transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.34,1.56,0.64,1);
+  overflow-y: auto;
+}

@@ -1,0 +1,141 @@
+.bs-overlay--open { pointer-events: auto; }
+.bs-overlay--open .bs-overlay__backdrop { opacity: 1; }
+.bs-overlay--open .bs-overlay__content { opacity: 1; transform: translateY(0); }
+
+.bs-overlay__header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1rem var(--section-padding-x); height: var(--header-height);
+  flex-shrink: 0;
+}
+.bs-overlay__close {
+  width: 36px; height: 36px; border-radius: 100px;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--bs-frame-border); border: none;
+  color: var(--text-primary); cursor: pointer;
+  transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1), background 0.2s ease;
+}
+.bs-overlay--open .bs-overlay__close {
+  animation: bs-spin-in 0.6s cubic-bezier(0.34,1.56,0.64,1) forwards;
+}
+@keyframes bs-spin-in {
+  from { transform: rotate(-90deg) scale(0.5); opacity: 0; }
+  to { transform: rotate(0deg) scale(1); opacity: 1; }
+}
+
+.bs-overlay__nav {
+  flex: 1; display: flex; flex-direction: column; justify-content: center;
+  padding: 2rem var(--section-padding-x); gap: 1rem;
+}
+.bs-overlay__navitem {
+  overflow: hidden;
+}
+.bs-overlay__navlink {
+  display: block;
+  text-decoration: none; color: var(--text-primary);
+  font-family: var(--bs-font-display); font-size: 2rem; font-weight: 600;
+  letter-spacing: -0.02em;
+  opacity: 0; transform: translateY(40px);
+  transition: color 0.2s ease;
+}
+.bs-overlay--open .bs-overlay__navlink {
+  animation: bs-cascade-up 0.5s cubic-bezier(0.34,1.56,0.64,1) forwards;
+  animation-delay: calc(150ms + (var(--stagger) * 60ms));
+}
+@keyframes bs-cascade-up {
+  to { opacity: 1; transform: translateY(0); }
+}
+.bs-overlay__navlink:hover { color: var(--bs-accent); }
+
+.bs-overlay__footer {
+  padding: 1.5rem var(--section-padding-x);
+  display: flex; flex-direction: column; gap: 1.5rem;
+  opacity: 0; transform: translateY(20px);
+}
+.bs-overlay--open .bs-overlay__footer {
+  animation: bs-cascade-up 0.5s cubic-bezier(0.34,1.56,0.64,1) forwards;
+  animation-delay: 500ms;
+}
+
+.bs-overlay__controls-row {
+  display: flex; gap: 10px;
+}
+.bs-theme-cycle--mobile {
+  flex: 0 0 auto; width: auto; padding: 0 16px; gap: 10px;
+  height: 44px; border-radius: 100px;
+}
+.bs-theme-cycle--mobile .bs-theme-cycle__icon {
+  position: relative; inset: auto;
+  width: 16px; height: 16px;
+}
+.bs-theme-cycle--mobile .bs-theme-cycle__icon:not(.bs-theme-cycle__icon--visible) {
+  display: none;
+}
+.bs-theme-cycle--mobile .bs-theme-cycle__icon--visible {
+  position: relative;
+  transform: none;
+}
+.bs-theme-cycle--mobile .bs-theme-cycle__label {
+  display: inline;
+  font-family: var(--bs-font-display); font-size: 0.875rem; font-weight: 600;
+  color: var(--text-primary);
+}
+.bs-locale-trigger--mobile {
+  flex: 1; height: 44px; border-radius: 100px;
+  gap: 8px; font-size: 0.875rem;
+}
+.bs-locale-trigger--mobile .bs-locale-trigger__code {
+  font-size: 0.875rem;
+}
+
+@media (max-width: 1080px) {
+  .bs-bar__inner { grid-template-columns: auto 1fr auto; }
+  .bs-capsule { display: none; }
+  .bs-actions .bs-cta, .bs-actions .bs-theme-cycle, .bs-actions .bs-locale-trigger { display: none; }
+  .bs-menu-btn { display: flex; }
+}
+
+@media (min-width: 1081px) {
+  .bs-overlay { display: none !important; }
+}
+
+@media (max-width: 768px) {
+  .bs-ribbon {
+    min-height: 34px;
+  }
+  .bs-ribbon__capsule {
+    gap: 8px;
+  }
+  .bs-ribbon__marquee-wrap {
+    max-width: none;
+  }
+  .bs-ribbon__action-label { display: none; }
+  .bs-ribbon__action {
+    padding: 3px 8px;
+    gap: 0;
+  }
+  .bs-ribbon__icon {
+    width: 22px; height: 22px;
+  }
+  .bs-ribbon__icon svg { width: 11px; height: 11px; }
+}
+
+@media (max-width: 480px) {
+  .bs-ribbon__text { font-size: 0.6875rem; }
+  .bs-ribbon__timer { font-size: 0.6875rem; }
+  .bs-ribbon__label { font-size: 0.6875rem; }
+  .bs-brand__name { font-size: 1.125rem; }
+  .bs-overlay__navlink { font-size: 1.75rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bs-ribbon, .bs-ribbon__marquee-track, .bs-ribbon__icon, .bs-ribbon__action,
+  .bs-bar, .bs-capsule__indicator,
+  .bs-overlay__content, .bs-overlay__backdrop, .bs-overlay__navlink,
+  .bs-brand__logo, .bs-cta, .bs-overlay__close,
+  .bs-theme-cycle, .bs-theme-cycle__icon,
+  .bs-lang-modal__backdrop, .bs-lang-modal__panel,
+  .bs-lang-modal__option, .bs-lang-modal__close {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

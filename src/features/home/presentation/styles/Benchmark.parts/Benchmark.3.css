@@ -1,0 +1,8 @@
+@media (prefers-reduced-motion: reduce) {
+  .bmk__selector-wrap, .bmk__duel-stage, .bmk__category, .bmk__source {
+    opacity: 1 !important; transform: none !important; animation: none !important;
+  }
+  .bmk__gauge-fill, .bmk__cat-bar-fill, .bmk__selector-indicator, .bmk__cat-detail {
+    transition-duration: 0.01ms !important;
+  }
+}

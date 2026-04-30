@@ -1,0 +1,27 @@
+export const APP_NAME = "CurriCanvas";
+export const APP_TAGLINE = "Resume. Refined.";
+export const APP_URL = "https://curricanvas.com";
+export const WEB_APP_URL = "https://web.curricanvas.com";
+export const SEO_IMAGE_PATH = "/curricanvas-preview.png";
+export const LOGO_IMAGE_PATH = "/curricanvas-logo.png";
+export const SEO_IMAGE_URL = `${APP_URL}${SEO_IMAGE_PATH}`;
+export const LOGO_IMAGE_URL = `${APP_URL}${LOGO_IMAGE_PATH}`;
+export const SUPPORT_EMAIL = "support@curricanvas.com";
+export const COMPANY_NAME = "PT Next Digital Mastery";
+export const COMPANY_YEAR = 2024;
+export const CURRENT_YEAR = 2026;
+export const EFFECTIVE_DATE = "April 18, 2026";
+export const COMPARISON_DATE = "April 18, 2026";
+export const COMPARISON_SOURCE = "Internal product evaluation";
+
+export const MONTHLY_FREE_CREDITS = 3;
+export const CREDIT_PRICE_USD = 0.5;
+export const CREDIT_EXPORT = 1;
+export const CREDIT_LOAD_EXPORT = 0.5;
+export const CREDIT_LOAD_DRAFT = 0.5;
+export const CREDIT_RESTORE_TRASH = 0.5;
+export const CREDIT_AI_IMPORT = 3;
+export const CREDIT_AI_SAVE = 0.5;
+export const CREDIT_CUSTOM_DOMAIN = 999;
+export const CREDIT_RESET_DAYS = 30;
+export const TRASH_RETENTION_DAYS = 30;

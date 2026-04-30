@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json.schemastore.org/web-manifest-combined.json",
+  "name": "CurriCanvas",
+  "short_name": "CurriCanvas",
+  "start_url": "/",
+  "scope": "/",
+  "id": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#FCFAF7",
+  "theme_color": "#B85C38",
+  "icons": [
+    {
+      "src": "curricanvas-logo.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "curricanvas-preview.png",
+      "type": "image/png",
+      "sizes": "1200x630",
+      "form_factor": "wide"
+    }
+  ],
+  "prefer_related_applications": false
+}
